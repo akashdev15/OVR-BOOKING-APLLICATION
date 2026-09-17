@@ -1,0 +1,45 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Homepage.spec.ts >> OVR Application >> Hompepage of Application
+- Location: tests\Homepage.spec.ts:5:9
+
+# Error details
+
+```
+Error: page.goto: url: expected string, got undefined
+```
+
+# Test source
+
+```ts
+  1  | import {Page , Locator, expect} from "@playwright/test"
+  2  | 
+  3  | export class Homepage{
+  4  | 
+  5  |     readonly page:Page
+  6  |     readonly popup:Locator
+  7  |     readonly popupcls:Locator
+  8  |     
+  9  | constructor (page:Page){
+  10 |     this.page=page
+  11 |     this.popup=page.locator(".img-responsive")
+  12 |     this.popupcls=this.popup.locator(".close_icon")
+  13 | }  
+  14 | 
+  15 | async pagegoto(){
+> 16 |     await this.page.goto(process.env.BASEURL)
+     |                     ^ Error: page.goto: url: expected string, got undefined
+  17 | }
+  18 | 
+  19 | async popupmsg(){
+  20 |     await expect(this.popup).toBeVisible()
+  21 |     await this.popupcls.click()
+  22 | }
+  23 | }
+```
