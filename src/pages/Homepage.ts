@@ -16,7 +16,7 @@ constructor (page:Page){
     this.popupcls=page.locator(".close_icon")
     this.origin=page.locator("#rc_select_0")
     this.destination=page.locator("#rc_select_1")
-    this.selectdate=page.getByTitle("2026-10-15")
+    this.selectdate=page.getByTitle("2026-10-16")
     this.searchbutton=page.getByRole("button",{name:"Search"})
 }  
 

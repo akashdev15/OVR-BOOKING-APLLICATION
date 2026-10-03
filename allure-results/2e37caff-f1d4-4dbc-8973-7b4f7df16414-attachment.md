@@ -1,0 +1,561 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Homepage.spec.ts >> OVR apllication  >> home page
+- Location: tests\Homepage.spec.ts:7:9
+
+# Error details
+
+```
+Error: locator.click: Error: strict mode violation: locator('.available_seat').filter({ hasText: 'U6' }) resolved to 2 elements:
+    1) <div class="available_seat">…</div> aka locator('div').filter({ hasText: /^U6$/ })
+    2) <div class="available_seat">…</div> aka locator('div').filter({ hasText: /^LU6$/ })
+
+Call log:
+  - waiting for locator('.available_seat').filter({ hasText: 'U6' })
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - navigation [ref=f2e3]:
+      - generic [ref=f2e4]:
+        - text: 
+        - link [ref=f2e6] [cursor=pointer]:
+          - /url: index.html
+        - generic [ref=f2e7]:
+          - link "" [ref=f2e8] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61570408293150
+          - link [ref=f2e10] [cursor=pointer]:
+            - /url: https://2ly.link/20itO
+            - img "android icon" [ref=f2e11]
+        - generic [ref=f2e12]:
+          - list [ref=f2e13]:
+            - listitem [ref=f2e14]:
+              - link "Home" [ref=f2e15] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f2e16]:
+              - link "Manage Bookings" [ref=f2e17] [cursor=pointer]:
+                - /url: manage-bookings.html
+            - listitem [ref=f2e18]:
+              - link "Gallery" [ref=f2e19] [cursor=pointer]:
+                - /url: gallery.html
+            - listitem [ref=f2e20]:
+              - link "About Us" [ref=f2e21] [cursor=pointer]:
+                - /url: about-us.html
+            - listitem [ref=f2e22]:
+              - link "Contact" [ref=f2e23] [cursor=pointer]:
+                - /url: contact.html
+          - list [ref=f2e24]:
+            - listitem [ref=f2e25]:
+              - link "Agent Login" [ref=f2e26] [cursor=pointer]:
+                - /url: http://ovrt.ovrtravels.com
+    - generic [ref=f2e30]:
+      - generic [ref=f2e34]:
+        - generic [ref=f2e35]:
+          - generic [ref=f2e41]:
+            - generic [ref=f2e42]: Origin
+            - generic [ref=f2e43] [cursor=pointer]:
+              - generic [ref=f2e44]:
+                - combobox [ref=f2e46]
+                - generic "Pulivendula" [ref=f2e47]
+              - generic [aria-hidden]:  
+          - link [ref=f2e48] [cursor=pointer]:
+            - /url: javascript:void(0)
+        - generic [ref=f2e55]:
+          - generic [ref=f2e56]: Destination
+          - generic [ref=f2e57] [cursor=pointer]:
+            - generic [ref=f2e58]:
+              - combobox [ref=f2e60]
+              - generic "Hyderabad" [ref=f2e61]
+            - generic [aria-hidden]:  
+        - generic [ref=f2e68]:
+          - generic [ref=f2e69]: Onward Date
+          - generic [ref=f2e71]:
+            - textbox "Onward" [ref=f2e72]: 03/10/2026
+            - generic:
+              - img "calendar": 
+        - generic [ref=f2e79]:
+          - generic [ref=f2e80]: Return Date
+          - generic [ref=f2e82]:
+            - textbox "Return" [ref=f2e83]
+            - generic:
+              - img "calendar": 
+        - button "Search" [ref=f2e86] [cursor=pointer]
+      - list [ref=f2e87]:
+        - listitem [ref=f2e88]
+        - listitem [ref=f2e92]:
+          - generic [ref=f2e93]: Sat 03-Oct
+        - listitem [ref=f2e94]:
+          - generic [ref=f2e95] [cursor=pointer]: Sun 04-Oct
+        - listitem [ref=f2e96]:
+          - generic [ref=f2e97] [cursor=pointer]: Mon 05-Oct
+        - listitem [ref=f2e98]:
+          - generic [ref=f2e99] [cursor=pointer]: Tue 06-Oct
+        - listitem [ref=f2e100]:
+          - generic [ref=f2e101] [cursor=pointer]: Wed 07-Oct
+        - listitem [ref=f2e102]:
+          - generic [ref=f2e103] [cursor=pointer]: Thu 08-Oct
+        - listitem [ref=f2e104]:
+          - generic [ref=f2e105] [cursor=pointer]: Fri 09-Oct
+        - listitem [ref=f2e106]:
+          - generic [ref=f2e107] [cursor=pointer]
+      - generic [ref=f2e112]:
+        - generic [ref=f2e114]:
+          - generic [ref=f2e115] [cursor=pointer]:
+            - slider [ref=f2e118]
+            - slider [ref=f2e119]
+          - generic [ref=f2e120]:
+            - generic [ref=f2e121]: 00:00
+            - generic [ref=f2e122]: 24:00
+          - generic [ref=f2e123]: Depart
+        - generic [ref=f2e125]:
+          - generic [ref=f2e126] [cursor=pointer]:
+            - slider [ref=f2e129]
+            - slider [ref=f2e130]
+          - generic [ref=f2e131]:
+            - generic [ref=f2e132]: 00:00
+            - generic [ref=f2e133]: 24:00
+          - generic [ref=f2e134]: Arrival
+        - generic [ref=f2e136]:
+          - generic [ref=f2e137] [cursor=pointer]:
+            - slider [ref=f2e140]
+            - slider [ref=f2e141]
+          - generic [ref=f2e142]:
+            - generic [ref=f2e143]: Rs. 0
+            - generic [ref=f2e144]: Rs. 1365
+          - generic [ref=f2e145]: Fare
+        - generic [ref=f2e148] [cursor=pointer]:
+          - generic [ref=f2e149]:
+            - combobox [ref=f2e151]
+            - generic: Bus Type
+          - generic [aria-hidden]:  
+        - generic [ref=f2e154] [cursor=pointer]:
+          - generic [ref=f2e155]:
+            - combobox [ref=f2e157]
+            - generic: Boarding Point
+          - generic [aria-hidden]:  
+        - generic [ref=f2e160] [cursor=pointer]:
+          - generic [ref=f2e161]:
+            - combobox [ref=f2e163]
+            - generic: Dropping Point
+          - generic [aria-hidden]:  
+      - generic [ref=f2e164]:
+        - generic [ref=f2e167]:
+          - generic [ref=f2e168]: Service
+          - generic [ref=f2e170]: Bus Type
+          - generic [ref=f2e173]:
+            - generic [ref=f2e174]: Departure
+            - generic [ref=f2e178]: Duration
+            - generic [ref=f2e180]: Arrival
+          - generic [ref=f2e182]: Available Seat
+          - generic [ref=f2e184]: Fare
+        - generic [ref=f2e189]:
+          - generic [ref=f2e190]:
+            - generic [ref=f2e191]: OVR 42 AC Brandnew
+            - generic [ref=f2e192] [cursor=pointer]
+            - generic "Simhadripuram, Kondapuram(PLVD), Muddanur, Jammalamadugu, Nossam, Mayaluru, Koilakuntla, Banaganapalli, Betamcherla," [ref=f2e193] [cursor=pointer]: Via
+          - generic [ref=f2e194]:
+            - generic [ref=f2e195]: Bus Type
+            - text: 2+1, Brand New Premium Sleeper/Seater, AC (42 seats)
+          - generic [ref=f2e198]:
+            - generic [ref=f2e199]:
+              - generic [ref=f2e200]:
+                - text: 08:30 PM
+                - generic [ref=f2e203]: Sat, 03 Oct
+              - link "Boarding Points" [ref=f2e204] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - generic [ref=f2e205]: 08h 30m Hrs
+            - generic [ref=f2e209]:
+              - generic [ref=f2e210]:
+                - text: 05:00 AM
+                - generic [ref=f2e213]: Sun, 04 Oct
+              - link "Dropping Points" [ref=f2e214] [cursor=pointer]:
+                - /url: javascript:void(0)
+          - generic [ref=f2e215]:
+            - generic [ref=f2e216]: "24"
+            - text: Seats available
+          - generic [ref=f2e219]:
+            - generic [ref=f2e220]: ₹
+            - text: 1050/-
+          - button "VIEW SEATS" [active] [ref=f2e223] [cursor=pointer]
+        - generic [ref=f2e226]:
+          - link "close" [ref=f2e227] [cursor=pointer]:
+            - /url: ""
+          - generic [ref=f2e232]:
+            - generic [ref=f2e233]:
+              - generic [ref=f2e234]: Seat Price
+              - generic [ref=f2e236]:
+                - button "All" [ref=f2e237] [cursor=pointer]
+                - button "1000" [ref=f2e238] [cursor=pointer]
+                - button "1300" [ref=f2e239] [cursor=pointer]
+            - table [ref=f2e241]:
+              - rowgroup [ref=f2e242]:
+                - row [ref=f2e243]:
+                  - cell "LU1" [ref=f2e244] [cursor=pointer]
+                  - cell "S1" [ref=f2e247] [cursor=pointer]
+                  - cell [ref=f2e250]
+                  - cell "L2" [ref=f2e251] [cursor=pointer]
+                  - cell "L1" [ref=f2e254] [cursor=pointer]
+                  - cell "U2" [ref=f2e257] [cursor=pointer]
+                  - cell "U1" [ref=f2e260] [cursor=pointer]
+                - row [ref=f2e263]:
+                  - cell "S2" [ref=f2e264] [cursor=pointer]
+                  - cell [ref=f2e267]
+                - row [ref=f2e268]:
+                  - cell "LU2" [ref=f2e269] [cursor=pointer]
+                  - cell "S3" [ref=f2e272] [cursor=pointer]
+                  - cell [ref=f2e275]
+                  - cell "L4" [ref=f2e276] [cursor=pointer]
+                  - cell "L3" [ref=f2e279] [cursor=pointer]
+                  - cell "U4" [ref=f2e282] [cursor=pointer]
+                  - cell "U3" [ref=f2e285] [cursor=pointer]
+                - row [ref=f2e288]:
+                  - cell "S4" [ref=f2e289] [cursor=pointer]
+                  - cell [ref=f2e292]
+                - row [ref=f2e293]:
+                  - cell "LU3" [ref=f2e294] [cursor=pointer]
+                  - cell "S5" [ref=f2e297] [cursor=pointer]
+                  - cell [ref=f2e300]
+                  - cell "L6" [ref=f2e301] [cursor=pointer]
+                  - cell "L5" [ref=f2e304] [cursor=pointer]
+                  - cell "U6" [ref=f2e307] [cursor=pointer]
+                  - cell "U5" [ref=f2e310] [cursor=pointer]
+                - row [ref=f2e313]:
+                  - cell "S6" [ref=f2e314] [cursor=pointer]
+                  - cell [ref=f2e317]
+                - row [ref=f2e318]:
+                  - cell "LU4" [ref=f2e319] [cursor=pointer]
+                  - cell "S7" [ref=f2e322] [cursor=pointer]
+                  - cell [ref=f2e325]
+                  - cell "L8" [ref=f2e326] [cursor=pointer]
+                  - cell "L7" [ref=f2e329] [cursor=pointer]
+                  - cell "U8" [ref=f2e332] [cursor=pointer]
+                  - cell "U7" [ref=f2e335] [cursor=pointer]
+                - row [ref=f2e338]:
+                  - cell "S8" [ref=f2e339] [cursor=pointer]
+                  - cell [ref=f2e342]
+                - row [ref=f2e343]:
+                  - cell "LU5" [ref=f2e344] [cursor=pointer]
+                  - cell "S9" [ref=f2e347] [cursor=pointer]
+                  - cell [ref=f2e350]
+                  - cell "L10" [ref=f2e351] [cursor=pointer]
+                  - cell "L9" [ref=f2e354] [cursor=pointer]
+                  - cell "U10" [ref=f2e357] [cursor=pointer]
+                  - cell "U9" [ref=f2e360] [cursor=pointer]
+                - row [ref=f2e363]:
+                  - cell "S10" [ref=f2e364] [cursor=pointer]
+                  - cell [ref=f2e367]
+                - row [ref=f2e368]:
+                  - cell "LU6" [ref=f2e369] [cursor=pointer]
+                  - cell "S11" [ref=f2e372] [cursor=pointer]
+                  - cell [ref=f2e375]
+                  - cell "L12" [ref=f2e376] [cursor=pointer]
+                  - cell "L11" [ref=f2e379] [cursor=pointer]
+                  - cell "U12" [ref=f2e382] [cursor=pointer]
+                  - cell "U11" [ref=f2e385] [cursor=pointer]
+                - row [ref=f2e388]:
+                  - cell "S12" [ref=f2e389] [cursor=pointer]
+                  - cell [ref=f2e392]:
+                    - img "EE_SLP" [ref=f2e395]
+            - generic [ref=f2e396]:
+              - generic [ref=f2e397]:
+                - generic [ref=f2e398]:
+                  - generic "Available Seat" [ref=f2e401]: Available
+                  - generic "Selected Seat" [ref=f2e404]: Selected
+                  - generic "Reserved Seat" [ref=f2e407]: Booked
+                  - generic "Ladies Confirmed Seat" [ref=f2e410]: Ladies(L)
+                  - generic "Ladies Available Seat" [ref=f2e413]: Available(L)
+                - generic [ref=f2e414]:
+                  - heading "Fare Details" [level=4] [ref=f2e415]
+                  - generic [ref=f2e417]:
+                    - generic [ref=f2e418]: Seats
+                    - generic [ref=f2e421]:
+                      - generic [ref=f2e422]: Ticket Fare
+                      - generic [ref=f2e423]:
+                        - generic [ref=f2e424]: ₹
+                        - text: "0"
+              - generic [ref=f2e426]:
+                - generic:
+                  - generic [ref=f2e428]:
+                    - heading "Boarding Point" [level=4] [ref=f2e429]
+                    - generic [ref=f2e436] [cursor=pointer]:
+                      - generic [ref=f2e437]:
+                        - combobox [ref=f2e439]
+                        - generic: Boarding Point
+                      - generic [aria-hidden]:  
+                  - generic [ref=f2e441]:
+                    - heading "Dropoff Point" [level=4] [ref=f2e442]
+                    - generic [ref=f2e449] [cursor=pointer]:
+                      - generic [ref=f2e450]:
+                        - combobox [ref=f2e452]
+                        - generic: Dropping Point
+                      - generic [aria-hidden]:  
+              - button "Continue" [ref=f2e453] [cursor=pointer]
+        - generic [ref=f2e456]:
+          - generic [ref=f2e457]:
+            - generic [ref=f2e458]: OVR 31 Non Ac Sleeper
+            - generic [ref=f2e459] [cursor=pointer]
+            - generic "Inagalur(andhra pradesh), Thondur, Mallela, Muddanur, Jammalamadugu, Nossam, Mayaluru, Koilakuntla, Banaganapalli, Betamcherla," [ref=f2e460] [cursor=pointer]: Via
+          - generic [ref=f2e461]:
+            - generic [ref=f2e462]: Bus Type
+            - text: 2+1, Sleeper, Non-AC (31 seats)
+          - generic [ref=f2e465]:
+            - generic [ref=f2e466]:
+              - generic [ref=f2e467]:
+                - text: 08:30 PM
+                - generic [ref=f2e470]: Sat, 03 Oct
+              - link "Boarding Points" [ref=f2e471] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - generic [ref=f2e472]: 08h 30m Hrs
+            - generic [ref=f2e476]:
+              - generic [ref=f2e477]:
+                - text: 05:00 AM
+                - generic [ref=f2e480]: Sun, 04 Oct
+              - link "Dropping Points" [ref=f2e481] [cursor=pointer]:
+                - /url: javascript:void(0)
+          - generic [ref=f2e482]:
+            - generic [ref=f2e483]: "0"
+            - text: Seats available
+          - generic [ref=f2e486]:
+            - generic [ref=f2e487]: ₹
+            - text: 1260/-
+          - button "REQUEST" [ref=f2e489] [cursor=pointer]
+    - contentinfo [ref=f2e491]:
+      - generic [ref=f2e492]:
+        - generic:
+          - generic [ref=f2e495]:
+            - heading "Get In Touch" [level=3] [ref=f2e496]
+            - list [ref=f2e497]:
+              - listitem [ref=f2e498]:
+                - generic [ref=f2e499]: 
+                - generic [ref=f2e500]:
+                  - heading "OVR TRAVELS" [level=5] [ref=f2e501]
+                  - text: Opp Andhra Bank,Main Road, Pulivendula, Pulivendula,Andhra Pradesh -516390
+            - heading "Customer Helpline" [level=4] [ref=f2e502]
+            - list [ref=f2e503]:
+              - listitem [ref=f2e504]:
+                - generic [ref=f2e505]: 
+                - text: "9676333788"
+              - listitem [ref=f2e506]:
+                - generic [ref=f2e507]: 
+                - link "ovrtravels@outlook.com" [ref=f2e508] [cursor=pointer]:
+                  - /url: mailto:ovrtravels@outlook.com
+          - generic [ref=f2e510]:
+            - heading "Useful Links" [level=3] [ref=f2e511]
+            - list:
+              - listitem [ref=f2e512]:
+                - link "Offers" [ref=f2e513] [cursor=pointer]:
+                  - /url: offers.html
+              - listitem [ref=f2e514]:
+                - link "Gallery" [ref=f2e515] [cursor=pointer]:
+                  - /url: gallery.html
+              - listitem [ref=f2e516]:
+                - link "About Us" [ref=f2e517] [cursor=pointer]:
+                  - /url: about-us.html
+              - listitem [ref=f2e518]:
+                - link "Contact" [ref=f2e519] [cursor=pointer]:
+                  - /url: contact.html
+              - listitem [ref=f2e520]:
+                - link "Testimonials" [ref=f2e521] [cursor=pointer]:
+                  - /url: testimonials.html
+              - listitem [ref=f2e522]:
+                - link "Feedback" [ref=f2e523] [cursor=pointer]:
+                  - /url: feedback.html
+              - listitem [ref=f2e524]:
+                - link "Schedules" [ref=f2e525] [cursor=pointer]:
+                  - /url: schedules.html
+              - listitem [ref=f2e526]:
+                - link "Privacy Policy" [ref=f2e527] [cursor=pointer]:
+                  - /url: privacy-policy.html
+              - listitem [ref=f2e528]:
+                - link "Terms & Conditions" [ref=f2e529] [cursor=pointer]:
+                  - /url: terms-and-conditions.html
+              - listitem [ref=f2e530]:
+                - link "Refund Status" [ref=f2e531] [cursor=pointer]:
+                  - /url: refund-status.html
+              - listitem [ref=f2e532]:
+                - link "Sitemap" [ref=f2e533] [cursor=pointer]:
+                  - /url: sitemap.html
+              - listitem [ref=f2e534]:
+                - link "Agent Login" [ref=f2e535] [cursor=pointer]:
+                  - /url: http://ovrt.ovrtravels.com
+              - listitem [ref=f2e536]:
+                - link "Agent Registration" [ref=f2e537] [cursor=pointer]:
+                  - /url: agent-registration.html
+              - listitem [ref=f2e538]:
+                - link "FAQS" [ref=f2e539] [cursor=pointer]:
+                  - /url: faqs.html
+              - listitem [ref=f2e540]:
+                - link "Confirm Phone Booking" [ref=f2e541] [cursor=pointer]:
+                  - /url: confirm-phone-booking.html
+              - listitem [ref=f2e542]:
+                - link "Careers" [ref=f2e543] [cursor=pointer]:
+                  - /url: careers.html
+              - listitem [ref=f2e544]:
+                - link "Contact Us" [ref=f2e545] [cursor=pointer]:
+                  - /url: http://cms.ticketsimply.com/cms_publish/contact-association
+              - listitem [ref=f2e546]:
+                - link "Cargo Contact Us" [ref=f2e547] [cursor=pointer]:
+                  - /url: cargo-contact-us.html
+          - list [ref=f2e550]:
+            - heading "Connect Us" [level=3] [ref=f2e551]
+            - paragraph
+            - listitem [ref=f2e552]:
+              - link "" [ref=f2e553] [cursor=pointer]:
+                - /url: search-results.html#
+            - listitem [ref=f2e555]:
+              - link "" [ref=f2e556] [cursor=pointer]:
+                - /url: search-results.html#
+            - listitem [ref=f2e558]:
+              - link "" [ref=f2e559] [cursor=pointer]:
+                - /url: search-results.html#
+            - listitem [ref=f2e561]:
+              - link "" [ref=f2e562] [cursor=pointer]:
+                - /url: search-results.html#
+            - listitem [ref=f2e564]:
+              - link "" [ref=f2e565] [cursor=pointer]:
+                - /url: search-results.html#
+            - paragraph
+      - paragraph [ref=f2e568]:
+        - text: © 2026 All rights reserved.
+        - link "OVR TRAVELS" [ref=f2e569] [cursor=pointer]:
+          - /url: http://www.ovrtravels.com
+    - generic:
+      - generic:
+        - button [ref=f2e571] [cursor=pointer]:
+          - heading "Packages" [level=4] [ref=f2e573]
+        - generic [ref=f2e577]:
+          - heading "Please Enter Your Details" [level=3] [ref=f2e578]
+          - generic [ref=f2e580]:
+            - generic [ref=f2e581]:
+              - generic [ref=f2e582]: Name*
+              - textbox [ref=f2e583]
+            - generic [ref=f2e584]:
+              - generic [ref=f2e585]: Email*
+              - textbox [ref=f2e586]
+            - generic [ref=f2e587]:
+              - generic [ref=f2e588]: Mobile*
+              - textbox [ref=f2e589]:
+                - /placeholder: " "
+            - generic [ref=f2e590]:
+              - generic [ref=f2e591]: Type
+              - combobox [ref=f2e592]:
+                - option "Bus Hire" [selected]
+                - option "Car Hire"
+                - option "Packages"
+            - generic [ref=f2e593]:
+              - generic [ref=f2e594]: From
+              - textbox [ref=f2e595]:
+                - /placeholder: " "
+            - generic [ref=f2e596]:
+              - generic [ref=f2e597]: To
+              - textbox [ref=f2e598]
+            - generic [ref=f2e599]:
+              - generic [ref=f2e600]: No. of Seats*
+              - textbox [ref=f2e601]
+            - generic [ref=f2e602]:
+              - generic [ref=f2e603]: Bus Type
+              - combobox [ref=f2e604]:
+                - option "AC" [selected]
+                - option "Non-AC"
+                - option "AC and Non-AC"
+            - generic [ref=f2e605]:
+              - generic [ref=f2e606]: Message*
+              - textbox [ref=f2e607]
+            - button "Submit" [ref=f2e609] [cursor=pointer]:  Submit
+      - generic [ref=f2e610]:
+        - generic [ref=f2e611]: ✔
+        - paragraph [ref=f2e612]: Success
+        - paragraph [ref=f2e613]: Thank you, Message has been sent successfully
+        - button "OK" [ref=f2e614] [cursor=pointer]
+  - img [ref=f2e615] [cursor=pointer]
+```
+
+# Test source
+
+```ts
+  1  | import{Page , Locator , expect } from "@playwright/test"
+  2  | 
+  3  | export class Bookingpage{
+  4  |     readonly page:Page
+  5  |     readonly viewseats:Locator
+  6  |     readonly breathnumber:Locator
+  7  |     readonly boardingpoint:Locator
+  8  |     readonly droppingpoint:Locator
+  9  |     readonly continuebtn:Locator
+  10 |     readonly booking:Locator
+  11 |     readonly gender:Locator
+  12 |     readonly name:Locator
+  13 |     readonly age:Locator
+  14 |     readonly email:Locator
+  15 |     readonly phnnumber:Locator
+  16 |     readonly anthnumber:Locator
+  17 |     readonly adress:Locator
+  18 |     readonly state:Locator
+  19 |     readonly upi:Locator
+  20 |     readonly proceedpayment:Locator
+  21 |     readonly okbtn:Locator
+  22 | 
+  23 | 
+  24 |     constructor(page:Page){
+  25 |         this.page=page
+  26 |         this.viewseats=page.getByRole("button",{name:"View Seats"})
+  27 |         this.breathnumber=page.locator(".available_seat").filter({'hasText':'U6'})
+  28 |         this.boardingpoint=page.locator('#rc_select_5')
+  29 |         this.droppingpoint=page.locator("#rc_select_6")
+  30 |         this.continuebtn=page.getByRole("button",{name:"Continue"})
+  31 |         this.booking=page.locator("div.ant-select:has(#title_U6) .ant-select-selector")
+  32 |         this.gender=page.getByText("Male").nth(0)
+  33 |         this.name=page.getByPlaceholder("Name")
+  34 |         this.age=page.getByPlaceholder("Age")
+  35 |         this.email=page.getByPlaceholder("Email")
+  36 |         this.phnnumber=page.getByPlaceholder("Mobile")
+  37 |         this.anthnumber=page.getByPlaceholder("Alternate No")
+  38 |         this.adress=page.getByPlaceholder("Address")
+  39 |         this.state=page.locator("#rc_select_10")
+  40 |         this.upi=page.locator("label.ant-radio-wrapper").nth(3)
+  41 |         this.proceedpayment=page.getByRole("button",{name:"Proceed to Payment"})
+  42 |         this.okbtn=page.locator("button.ant-btn-primary",{hasText:"OK"})
+  43 |     }
+  44 | 
+  45 |     async fetchdetails(boardingpoint:string,droppingpoint:string,name:string,age:string,email:string,phnnumber:string,anthnumber:string,adress:string,state:string,){
+  46 |         await this.viewseats.nth(0).click()
+> 47 |         await this.breathnumber.click()
+     |                                 ^ Error: locator.click: Error: strict mode violation: locator('.available_seat').filter({ hasText: 'U6' }) resolved to 2 elements:
+  48 |         await this.boardingpoint.click()
+  49 |         await this.boardingpoint.fill(boardingpoint)
+  50 |         await this.boardingpoint.press("Enter")
+  51 |         await this.droppingpoint.click()
+  52 |         await this.droppingpoint.fill(droppingpoint)
+  53 |         await this.droppingpoint.press("Enter")
+  54 |         await this.continuebtn.click()
+  55 |         await this.booking.click()
+  56 |         await this.gender.click()
+  57 |         await this.name.fill(name)
+  58 |         await this.age.fill(age)
+  59 |         await this.email.fill(email)
+  60 |         await this.phnnumber.fill(phnnumber)
+  61 |         await this.anthnumber.fill(anthnumber)
+  62 |         await this.adress.fill(adress)
+  63 |         await this.state.click()
+  64 |         await this.state.fill(state)
+  65 |         await this.state.press("Enter")
+  66 |         await this.upi.click()
+  67 |         await this.proceedpayment.click()
+  68 |         await this.okbtn.click()
+  69 | 
+  70 | 
+  71 | 
+  72 |     }
+  73 |     
+  74 | }
+```
