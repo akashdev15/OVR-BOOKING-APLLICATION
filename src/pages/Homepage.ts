@@ -21,8 +21,7 @@ constructor (page:Page){
 }  
 
 async pagegoto(){
-    await this.page.goto(process.env.BASE_url)
-    await this.page.waitForTimeout(5000)
+    await this.page.goto("/", {waitUntil:"domcontentloaded"})
 }
 
 async popupmsg(){
@@ -42,7 +41,7 @@ async filldetails(origin:string,destination:string,dateselection:string,){
 }
 
 async nextpage(){
-    await this.page.goto("https://www.ovrtravels.com/search-results.html")
+    await this.page.goto("/search-results.html", {waitUntil:"domcontentloaded"})
 }
 
 
