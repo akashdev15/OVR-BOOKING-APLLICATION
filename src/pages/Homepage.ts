@@ -22,6 +22,7 @@ constructor (page:Page){
 
 async pagegoto(){
     await this.page.goto(process.env.BASE_url)
+    await this.page.waitForTimeout(5000)
 }
 
 async popupmsg(){

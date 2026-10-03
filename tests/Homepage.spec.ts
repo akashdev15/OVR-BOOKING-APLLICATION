@@ -8,6 +8,7 @@ test.describe("OVR apllication ",()=>{
 
 
         await homepage.pagegoto()
+        await homepage.page.waitForTimeout(5000)
         await homepage.popupmsg()
         await homepage.filldetails(process.env.origin,process.env.destination,process.env.dateselection)
         await homepage.nextpage()
