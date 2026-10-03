@@ -3,20 +3,21 @@ import {Page , Locator, expect} from "@playwright/test"
 export class Homepage{
 
     readonly page:Page
-    readonly popup:Locator
     readonly popupcls:Locator
     readonly origin:Locator
     readonly destination:Locator
-    readonly dateselection:Locator
+    readonly selectdate:Locator
+    readonly searchbutton:Locator
+    
 
     
 constructor (page:Page){
     this.page=page
-    this.popup=page.locator(".img-responsive")
-    this.popupcls=this.popup.locator(".close_icon")
-    this.origin=page.locator(".ant-select-selection-item")
-    this.destination=page.locator(".ant-select-selection-item")
-    this.dateselection=page.locator(".anticon anticon-calendar")
+    this.popupcls=page.locator(".close_icon")
+    this.origin=page.locator("#rc_select_0")
+    this.destination=page.locator("#rc_select_1")
+    this.selectdate=page.getByTitle("2026-09-26")
+    this.searchbutton=page.getByRole("button",{name:"Search"})
 }  
 
 async pagegoto(){
@@ -24,12 +25,24 @@ async pagegoto(){
 }
 
 async popupmsg(){
-    await expect(this.popup).toBeVisible()
     await this.popupcls.click()
+
 }
 
+async filldetails(origin:string,destination:string,dateselection:string,){
+    await this.origin.click()
+    await this.origin.fill(origin)
+    await this.origin.press("Enter")
+    await this.destination.click()
+    await this.destination.fill(destination)
+    await this.destination.press("Enter")
+    await this.searchbutton.click()
 
+}
 
+async nextpage(){
+    await this.page.goto("https://www.ovrtravels.com/search-results.html")
+}
 
 
 
