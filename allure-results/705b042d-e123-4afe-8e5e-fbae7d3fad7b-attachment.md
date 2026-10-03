@@ -1,0 +1,99 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Homepage.spec.ts >> OVR apllication  >> home page
+- Location: tests\Homepage.spec.ts:7:9
+
+# Error details
+
+```
+Error: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('.available_seat').filter({ hasText: 'U7' })
+
+```
+
+# Test source
+
+```ts
+  1  | import{Page , Locator , expect } from "@playwright/test"
+  2  | 
+  3  | export class Bookingpage{
+  4  |     readonly page:Page
+  5  |     readonly viewseats:Locator
+  6  |     readonly breathnumber:Locator
+  7  |     readonly boardingpoint:Locator
+  8  |     readonly droppingpoint:Locator
+  9  |     readonly continuebtn:Locator
+  10 |     readonly booking:Locator
+  11 |     readonly gender:Locator
+  12 |     readonly name:Locator
+  13 |     readonly age:Locator
+  14 |     readonly email:Locator
+  15 |     readonly phnnumber:Locator
+  16 |     readonly anthnumber:Locator
+  17 |     readonly adress:Locator
+  18 |     readonly state:Locator
+  19 |     readonly upi:Locator
+  20 |     readonly proceedpayment:Locator
+  21 |     readonly okbtn:Locator
+  22 | 
+  23 | 
+  24 |     constructor(page:Page){
+  25 |         this.page=page
+  26 |         this.viewseats=page.getByRole("button",{name:"View Seats"})
+  27 |         this.breathnumber=page.locator(".available_seat").filter({'hasText':'U7'})
+  28 |         this.boardingpoint=page.locator('#rc_select_5')
+  29 |         this.droppingpoint=page.locator("#rc_select_6")
+  30 |         this.continuebtn=page.getByRole("button",{name:"Continue"})
+  31 |         this.booking=page.locator("div.ant-select:has(#title_U7) .ant-select-selector")
+  32 |         this.gender=page.getByText("Male").nth(0)
+  33 |         this.name=page.getByPlaceholder("Name")
+  34 |         this.age=page.getByPlaceholder("Age")
+  35 |         this.email=page.getByPlaceholder("Email")
+  36 |         this.phnnumber=page.getByPlaceholder("Mobile")
+  37 |         this.anthnumber=page.getByPlaceholder("Alternate No")
+  38 |         this.adress=page.getByPlaceholder("Address")
+  39 |         this.state=page.locator("#rc_select_10")
+  40 |         this.upi=page.locator("label.ant-radio-wrapper").nth(3)
+  41 |         this.proceedpayment=page.getByRole("button",{name:"Proceed to Payment"})
+  42 |         this.okbtn=page.locator("button.ant-btn-primary",{hasText:"OK"})
+  43 |     }
+  44 | 
+  45 |     async fetchdetails(boardingpoint:string,droppingpoint:string,name:string,age:string,email:string,phnnumber:string,anthnumber:string,adress:string,state:string,){
+  46 |         await this.viewseats.nth(0).click()
+> 47 |         await this.breathnumber.click()
+     |                                 ^ Error: locator.click: Target page, context or browser has been closed
+  48 |         await this.boardingpoint.click()
+  49 |         await this.boardingpoint.fill(boardingpoint)
+  50 |         await this.boardingpoint.press("Enter")
+  51 |         await this.droppingpoint.click()
+  52 |         await this.droppingpoint.fill(droppingpoint)
+  53 |         await this.droppingpoint.press("Enter")
+  54 |         await this.continuebtn.click()
+  55 |         await this.booking.click()
+  56 |         await this.gender.click()
+  57 |         await this.name.fill(name)
+  58 |         await this.age.fill(age)
+  59 |         await this.email.fill(email)
+  60 |         await this.phnnumber.fill(phnnumber)
+  61 |         await this.anthnumber.fill(anthnumber)
+  62 |         await this.adress.fill(adress)
+  63 |         await this.state.click()
+  64 |         await this.state.fill(state)
+  65 |         await this.state.press("Enter")
+  66 |         await this.upi.click()
+  67 |         await this.proceedpayment.click()
+  68 |         await this.okbtn.click()
+  69 | 
+  70 | 
+  71 | 
+  72 |     }
+  73 |     
+  74 | }
+```
