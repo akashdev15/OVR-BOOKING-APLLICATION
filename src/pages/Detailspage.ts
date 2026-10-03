@@ -24,11 +24,11 @@ export class Bookingpage{
     constructor(page:Page){
         this.page=page
         this.viewseats=page.getByRole("button",{name:"View Seats"})
-        this.breathnumber=page.locator(".available_seat").filter({'hasText':'U9'})
+        this.breathnumber=page.locator(".available_seat").filter({'hasText':'U7'})
         this.boardingpoint=page.locator('#rc_select_5')
         this.droppingpoint=page.locator("#rc_select_6")
         this.continuebtn=page.getByRole("button",{name:"Continue"})
-        this.booking=page.locator("div.ant-select:has(#title_U9) .ant-select-selector")
+        this.booking=page.locator("div.ant-select:has(#title_U7) .ant-select-selector")
         this.gender=page.getByText("Male").nth(0)
         this.name=page.getByPlaceholder("Name")
         this.age=page.getByPlaceholder("Age")
